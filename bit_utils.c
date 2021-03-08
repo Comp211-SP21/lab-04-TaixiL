@@ -72,3 +72,6 @@ int bit_select(int num, int mostSignificant, int leastSignificant){
     int result = (num >> (mostSignificant+1-number)) & ~(~0 << number);
     return result;
 }
+int main(){
+    return 0;
+}
