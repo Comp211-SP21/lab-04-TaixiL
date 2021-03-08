@@ -37,6 +37,9 @@ char* itob (int num, int size){
         one = 48;
     }
 
+    if (num<0){
+        num = num - 2*num;
+    }
     num = num - startVal;
     for (int i=size-1; i>0; i--) {
         int power2Val = power2(i-1);
@@ -48,6 +51,7 @@ char* itob (int num, int size){
     for (int i=0; i<size; i++) {
         str[i] = binary[i];
     }
+    printf("%s\n", binary);
     return str;
     }
 
