@@ -1,4 +1,4 @@
-// PID: _________
+// PID: 730401749
 // I pledge the COMP211 honor code.
 #include "bit_utils.h"
 
@@ -71,7 +71,4 @@ int bit_select(int num, int mostSignificant, int leastSignificant){
     int number = mostSignificant - leastSignificant + 1;
     int result = (num >> (mostSignificant+1-number)) & ~(~0 << number);
     return result;
-}
-int main(){
-    return 0;
 }
