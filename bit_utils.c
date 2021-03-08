@@ -1,7 +1,6 @@
 // PID: 730401749
 // I pledge the COMP211 honor code.
 #include "bit_utils.h"
-#include "string.h"
 
 void negate_twos(char *bstring, int size) {
     // reverse all 0s and 1s
@@ -47,8 +46,8 @@ char* itob(int num, int size) {
 
         if (isnegative) 
             negate_twos(output, size);
-    char *str = (char*)malloc(sizeof(char)*(size));
-    str[size] = '\n';
+    char *str = (char*)malloc(sizeof(char)*(size)+1);
+    str[size] = 0;
     for (int i=0; i<size; i++) {
         str[i] = output[i];
     }
