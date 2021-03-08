@@ -2,12 +2,12 @@
 // I pledge the COMP211 honor code.
 #include "bit_utils.h"
 
-void setDefaultTo (char origin[], char tar) {
+void setDefaultTo (char origin[], char tar, int size) {
     if (tar==48) {
-        for (int i=0; i<16; i++)
+        for (int i=0; i<size; i++)
             origin[i] = 48;
     } else {
-        for (int i=0; i<16; i++)
+        for (int i=0; i<size; i++)
             origin[i] = 49;
     }
 }
@@ -26,12 +26,12 @@ char* itob (int num, int size){
     char zero = 48;
     char one = 49;
     char sign = (num < 0) ? 45 : 43;
-    setDefaultTo(binary, zero);
+    setDefaultTo(binary, zero, size);
 
     binary[0] = (sign == 45 && num!=0) ? 49 : 48;
 
     if (sign == 45 && num != 0) {
-        setDefaultTo(binary, one);
+        setDefaultTo(binary, one, size);
         startVal = 1;
         zero = 49;
         one = 48;
@@ -51,7 +51,6 @@ char* itob (int num, int size){
     for (int i=0; i<size; i++) {
         str[i] = binary[i];
     }
-    printf("%s\n", binary);
     return str;
     }
 
@@ -76,3 +75,4 @@ int bit_select(int num, int mostSignificant, int leastSignificant){
     int result = (num >> (mostSignificant+1-number)) & ~(~0 << number);
     return result;
 }
+
