@@ -29,9 +29,8 @@ char* itob (int num, int size) {
 
     char *str = (char*)malloc(sizeof(char)*(size));
     str[size] = 0;
-    for (int i=0; i<size; i++) {
+    for (int i=0; i<size; i++)
         str[i] = binary[i];
-    }
     return str;
 }
 
